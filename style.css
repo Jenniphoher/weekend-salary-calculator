@@ -1,0 +1,198 @@
+body {
+    margin: 0;
+    padding: 10px;
+    background: url("images/AdobeStock_821909023_Preview.jpeg") no-repeat fixed center;
+    background-size: cover;
+    height: 700px;
+    font-family: "Raleway", sans-serif;
+}
+
+.body-image {
+    background-color: rgba(220, 0, 131, 0.53);
+    background-blend-mode: multiply;
+    filter: drop-shadow(100px 100px 100px);
+    filter: contrast(350%);
+}
+
+header {
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    width: 98%;
+    border-radius: 3px;
+    background-color: rgba(255, 230, 239, 1);
+    text-transform: uppercase;
+    text-indent: -800px;
+}
+
+h1 {
+    margin: 0;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    /* background-color: rgba(218, 114, 151, 0.25); */
+    color: #FDFFD2;
+    /* text-shadow: -1px 0 1px #DC0083, 
+                0 1px 1px #DC0083, 
+                1px 0 1px #DC0083, 
+                0 -1px 1px #DC0083; */
+    font-size: 25;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h5 {
+    margin-top: 0;
+    color: #FDFFD2;
+}
+
+h2 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    border-radius: 3px;
+    background-color: rgba(252, 206, 233, 0.2);
+    color: #FDFFD2;
+    font-size: 23px;
+    /* text-shadow: -1px 0 1px #DC0083, 
+                0 1px 1px #DC0083, 
+                1px 0 1px #DC0083, 
+                0 -1px 1px #DC0083; */
+}
+
+.input-textbox {
+    height: 16px;
+    width: 130px;
+    border-radius: 5px;
+    background-color: antiquewhite;
+    color: black;
+
+}
+
+.input-textbox:focus {
+    height: 16px;
+    width: 130px;
+    color: black;
+    text-transform: lowercase;
+    text-align: justify;
+}
+
+input[type=text]:focus {
+    border: 2px solid red;
+    color: black;
+    outline: none;
+}
+
+input[type=number]:focus{
+    border: 2px solid red;
+    outline: none;
+}
+
+.submitButton {
+    height: 23px;
+    width: 80px;
+    border-radius: 6px;
+    background-color: #45ac3a;
+    color: #FDFFD2;
+    text-transform: uppercase;
+}
+
+.table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 750px;
+    border: 2px solid #DC0083;
+    border-radius: 3px;
+}
+
+.table-header {
+    background-color: #FFA823;
+}
+
+.table-header-row {
+    background-color: #FFB4C2;
+}
+
+th {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #FDFFD2;
+    text-shadow: -1px 0 1px #DC0083, 
+                0 1px 1px #DC0083, 
+                1px 0 1px #DC0083, 
+                0 -1px 1px #DC0083;
+}
+
+.first-name, .id-number, .annual {
+    background-color: #DA7297;
+}
+
+.id-number, .title {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+footer {
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    width: 98%;
+    border-radius: 3px;
+    background-color: #ffe6ef;
+    border: 1px solid black;
+}
+
+#total-monthly-salary {
+    display: block;
+    text-transform: uppercase;
+    text-indent: 660px;
+}
+
+/* .over-budget {
+    text-align: center;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    box-sizing: border-box;
+} */
+
+.p-over {
+    text-align: center;
+    color: red;
+    font-size: 15px;
+    font-weight: bold;
+    box-sizing: border-box;
+    position:fixed;
+    animation: alerttext 2s;
+}
+
+@keyframes alerttext {
+    0%   {left: 0px; right: 20px}
+    25%  {left: 20px; right: 0px}
+    50%  {left: 0px; right: 20px}
+    75%  {left: 20px; right: 0px}
+    100% {left: 0px; right: 0px}
+    }
+
+.empty {
+    background: white;
+    margin-top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+* {
+    text-align: center;
+}

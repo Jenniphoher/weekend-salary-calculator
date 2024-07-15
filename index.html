@@ -3,18 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <script defer src="script.js"></script>
   <title>Salary Calculator</title>
 </head>
-<body>
+
+<body class="body-image">
+
   <header>
-    <h1>Salary Calculator</h1>
+    <img class="company-icon" src="https://seeklogo.com/images/E/e-letter-digital-media-company-logo-03BA4A5AE3-seeklogo.com.png">
+    <p class="the-company">The Company</p>
   </header>
+
+  <h1>Welcome to the Company's<br>
+    Salary Calculator</h1>
+  <h5>The Company desires to stay under $20,000.
+    Please do <i>not</i> exceed this amount.
+  </h5>
+
   <main>
     <h2>Add Employee</h2>
+
+    <form>
+      <input
+        id="fname-input"
+        class="input-textbox"
+        placeholder="First Name"
+        type="text"
+        data-testid="firstNameInput"
+      >
+      <input
+        data-testid="lastNameInput"
+        id="lname-input"
+        class="input-textbox"          
+        placeholder="Last Name"
+        type="text"
+      >
+      <input
+        id="id-input"
+        class="input-textbox"          
+        placeholder="ID Number"
+        type="number"
+        min="0"
+        data-testid="idInput"
+      >
+      <input
+        id="title-input"
+        class="input-textbox"
+        placeholder="Title"
+        type="text"
+        data-testid="titleInput"
+      >
+      <input
+        id="annualSalary-input"
+        class="input-textbox"
+        placeholder="Annual Salary"
+        type="number"
+        min="0"
+        data-testid="annualSalaryInput"
+      >
+      <input
+        id="submitButton"
+        class="submitButton"
+        onClick="addEmployee(event)"
+        type="submit"
+        value="Submit"
+        data-testid="submitButton"
+      >
+    </form>
+
     <h2>Employees</h2>
+
+    <table class="table">
+
+      <thead class="table-header">
+        <tr class="table-header-row">
+          <th class="first-name">First Name</th>
+          <th class="last-name">Last Name</th>
+          <th class="id-number">ID</th>
+          <th class="title">Title</th>
+          <th class="annual">Annual Salary</th>
+          <th class="remove">Remove Employee</th>
+        </tr>
+      </thead>
+
+
+      <tbody id="table-body">
+      </tbody>
+
+    </table>
   </main>
+
+  <div id="over-budget-indicator"></div>
+
   <footer>
-    <p>Total Monthly</p>
+
+  <p 
+  id="total-monthly-salary"
+  class="total-monthly-salary"
+  >Total Monthly</p>
+
   </footer>
+
+
+
 </body>
 </html>
