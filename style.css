@@ -5,6 +5,7 @@ body {
     background-size: cover;
     height: 700px;
     font-family: "Raleway", sans-serif;
+    box-sizing: border-box;
 }
 
 .body-image {
@@ -12,12 +13,14 @@ body {
     background-blend-mode: multiply;
     filter: drop-shadow(100px 100px 100px);
     filter: contrast(350%);
+    box-sizing: border-box;
 }
 
 header {
     margin-top: 50px;
     margin-left: auto;
     margin-right: auto;
+    padding: 5px;
     position: fixed;
     top: 0;
     left: 0;
@@ -25,9 +28,40 @@ header {
     height: 50px;
     width: 98%;
     border-radius: 3px;
-    background-color: rgba(255, 230, 239, 1);
+    background-color: rgba(255, 255, 255, 0.9);
     text-transform: uppercase;
     text-indent: -800px;
+    box-shadow: 3px 0px 10px rgba(0,0,0, 0.2),
+                0px 3px 10px rgba(0,0,0, 0.2);
+    box-sizing: border-box;
+}
+
+.the-company {
+    margin: 0;
+    display: inline;
+    position: relative;
+    height:auto;
+    width: auto;
+    padding: 10px;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    vertical-align: super;
+    box-sizing: border-box;
+}
+
+.company-icon {
+    position: relative;
+    margin: 0;
+    padding: 5px;
+    display: inline;
+    position: relative;
+    width: 5%;
+    border: 1px solid rgba(200, 100, 220, 0.1);
+    border-radius: 2px;
+    background-color: rgba(150, 150, 150, 0.8);
+    box-shadow: 3px 0px 5px rgba(130, 130, 130, 0.85),
+                0px 3px 5px rgba(130, 130, 130, 0.85);
+    box-sizing: border-box;
 }
 
 h1 {
@@ -37,18 +71,36 @@ h1 {
     border-radius: 5px;
     /* background-color: rgba(218, 114, 151, 0.25); */
     color: #FDFFD2;
-    /* text-shadow: -1px 0 1px #DC0083, 
-                0 1px 1px #DC0083, 
-                1px 0 1px #DC0083, 
-                0 -1px 1px #DC0083; */
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
     font-size: 25;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 2px;    
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4),
+            0px 0px 5px rgba(0, 0, 0, 0.4), 
+            0px 0px 5px rgba(0, 0, 0, 0.4), 
+            0px 0px 5px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+.logo-style {
+    font-family: 'DM Serif Display', serif; 
+    font-weight: 400; 
+    color:antiquewhite;
+    text-shadow: -1px 0px 2px black, 
+                0px 1px 5px black, 
+                1px 0px 5px black, 
+                0px -1px 2px black;
+    box-sizing: border-box;
 }
 
 h5 {
     margin-top: 0;
     color: #FDFFD2;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2),
+                0px 0px 10px rgba(0, 0, 0, 0.2),
+                0px 0px 10px rgba(0, 0, 0, 0.2),
+                0px 0px 10px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
 }
 
 h2 {
@@ -59,19 +111,22 @@ h2 {
     background-color: rgba(252, 206, 233, 0.2);
     color: #FDFFD2;
     font-size: 23px;
-    /* text-shadow: -1px 0 1px #DC0083, 
-                0 1px 1px #DC0083, 
-                1px 0 1px #DC0083, 
-                0 -1px 1px #DC0083; */
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.9),
+                0px 0px 2px rgba(0, 0, 0, 0.9);
+    box-shadow: 3px 0px 15px rgba(0, 0, 0, 0.2),
+                0px 3px 15px rgba(0, 0, 0, 0.2);
 }
 
 .input-textbox {
     height: 16px;
     width: 130px;
+    border: none;
     border-radius: 5px;
     background-color: antiquewhite;
     color: black;
-
+    box-shadow: 3px 0px 15px rgba(0,0,0, 0.1),
+                0px 3px 15px rgba(0,0,0, 0.1);
+    box-sizing: border-box;
 }
 
 .input-textbox:focus {
@@ -80,61 +135,95 @@ h2 {
     color: black;
     text-transform: lowercase;
     text-align: justify;
+    box-sizing: border-box;
 }
 
 input[type=text]:focus {
     border: 2px solid red;
     color: black;
     outline: none;
+    box-sizing: border-box;
 }
 
 input[type=number]:focus{
     border: 2px solid red;
     outline: none;
+    box-sizing: border-box;
+}
+
+button {
+    height: 23px;
+    width: 80px;
+    border: none;
+    border-radius: 6px;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    font-weight: 600;
 }
 
 .submitButton {
     height: 23px;
     width: 80px;
+    border: none;
     border-radius: 6px;
     background-color: #45ac3a;
     color: #FDFFD2;
     text-transform: uppercase;
+    box-sizing: border-box;
+}
+
+.submitButton[value] {
+    text-shadow: -1px 0px 0px black, 
+                0px 1px 0px black, 
+                1px 0px 0px black, 
+                0px -1px 0px black;
+    font-size: 15px;
+    box-sizing: border-box;
 }
 
 .table {
     margin-left: auto;
     margin-right: auto;
-    width: 750px;
-    border: 2px solid #DC0083;
+    width: 90%;
+    border: 2px solid;
     border-radius: 3px;
+    box-sizing: border-box;
 }
 
 .table-header {
-    background-color: #FFA823;
-}
-
-.table-header-row {
-    background-color: #FFB4C2;
+    background-color: rgba(174, 162, 162, 0.3);
+    box-sizing: border-box;
 }
 
 th {
     padding-left: 5px;
     padding-right: 5px;
-    color: #FDFFD2;
-    text-shadow: -1px 0 1px #DC0083, 
-                0 1px 1px #DC0083, 
-                1px 0 1px #DC0083, 
-                0 -1px 1px #DC0083;
+    color: antiquewhite;
+    text-shadow: -1px 0px 1px black, 
+                0px 1px 1px black, 
+                1px 0px 1px black, 
+                0px -1px 1px black;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    font-size: 18px;
 }
 
 .first-name, .id-number, .annual {
-    background-color: #DA7297;
+    background-color: rgba(196, 196, 196, 0.3);
 }
 
 .id-number, .title {
     padding-left: 30px;
     padding-right: 30px;
+}
+
+tr {
+    background-color: rgba(196, 196, 196, 0.1);
+    color: antiquewhite;
+    text-shadow: -1px 0px 1px black, 
+                0px 1px 1px black, 
+                1px 0px 1px black, 
+                0px -1px 1px black;
 }
 
 footer {
@@ -148,17 +237,20 @@ footer {
     height: 50px;
     width: 98%;
     border-radius: 3px;
-    background-color: #ffe6ef;
-    border: 1px solid black;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 3px 0px 10px rgba(0,0,0, 0.2),
+                0px 3px 10px rgba(0,0,0, 0.2);
+    box-sizing: border-box;
 }
 
 #total-monthly-salary {
-    display: block;
     text-transform: uppercase;
     text-indent: 660px;
+    box-sizing: border-box;
 }
 
-/* .over-budget {
+.over-budget {
     text-align: center;
     padding-top: 2px;
     padding-bottom: 2px;
@@ -166,33 +258,24 @@ footer {
     font-size: 20px;
     font-weight: bold;
     box-sizing: border-box;
-} */
-
-.p-over {
-    text-align: center;
-    color: red;
-    font-size: 15px;
-    font-weight: bold;
-    box-sizing: border-box;
-    position:fixed;
-    animation: alerttext 2s;
 }
-
-@keyframes alerttext {
-    0%   {left: 0px; right: 20px}
-    25%  {left: 20px; right: 0px}
-    50%  {left: 0px; right: 20px}
-    75%  {left: 20px; right: 0px}
-    100% {left: 0px; right: 0px}
-    }
 
 .empty {
     background: white;
     margin-top: 200px;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
+}
+
+.time-turner {
+    height: 100px;
+    width: 100px;
+    border-radius: 16px;
+    box-sizing: border-box;
 }
 
 * {
     text-align: center;
+    box-sizing: border-box;
 }

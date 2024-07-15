@@ -14,7 +14,15 @@ let idNumber = document.querySelector('#id-input');
 let title = document.querySelector('#title-input');
 let annualSalary = document.querySelector('#annualSalary-input');
 
+function convertNumberToUSD(number) {
+    const currencyFormatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD'
+    });
 
+    let numberUSD = currencyFormatter.format(number);
+    return numberUSD;
+}
 
 // add employee function
 function addEmployee(event) {
@@ -99,35 +107,36 @@ function addEmployee(event) {
 
 
     // Total Monthly 
+    let totalSumUSD;
     let monthlySalary = Math.round(annualSalary.valueAsNumber/12);
     console.log('This is monthlySalary:', monthlySalary);
     totalSum += monthlySalary;
     console.log('This is totalSum:', totalSum);
-
-    totalMonthlySalary.innerHTML = 'Total Monthly: $'+totalSum;
+    totalSumUSD = convertNumberToUSD(totalSum);
+    console.log('This is totalSum:', totalSumUSD);
 
     if (totalSum < 20000) {
-        totalMonthlySalary.innerHTML = 'Total Monthly: $'+totalSum;
+        totalMonthlySalary.innerHTML = 'Total Monthly:'+totalSumUSD;
     
     } else if (totalSum === 20000) {
-        indicator.innerHTML = `
+        indicator.innerHTML += `
         Budget was hit. Do not add any more employees.`;
     
     } else if (totalSum > 20000 && totalSum < 50000) {
         footer.classList.add('over-budget');
-        totalMonthlySalary.innerHTML = 'Total Monthly: $'+totalSum;
-        indicator.innerHTML = `
+        totalMonthlySalary.innerHTML = 'Total Monthly:'+totalSumUSD;
+        indicator.innerHTML += `
         <p style="color: red">
         Total monthly exceeded $20,000. Please delete employees.
         </p>`;
     
     } else if (totalSum >= 50000 && totalSum < 100000) {
         footer.classList.add('over-budget');
-        totalMonthlySalary.innerHTML = 'Total Monthly: $'+totalSum;
+        totalMonthlySalary.innerHTML = 'Total Monthly:'+totalSumUSD;
         alert('COMPANY WILL SHUT DOWN. STOP.');
         
     } else if (totalSum >= 200000) {
-        totalMonthlySalary.innerHTML = 'Total Monthly: $'+totalSum;
+        totalMonthlySalary.innerHTML = 'Total Monthly:'+totalSumUSD;
         body.innerHTML = '';
         body.classList.add('empty');
         body.innerHTML += `
@@ -155,13 +164,15 @@ function addEmployee(event) {
 
 // delete funtion
 function deleteEmployee(event, idNumOfEmployee) {
-
+    let totalSumUSD;
     for(let i=0; i<employeeData.length; i++) {
         if(idNumOfEmployee === employeeData[i].idNum) {
 
+            
             monthlySalary = Math.round(employeeData[i].annualNum/12);
             console.log('This is monthlySalary before deleting:', monthlySalary);
             totalSum -= monthlySalary;
+            totalSumUSD = convertNumberToUSD(totalSum);
             console.log('This is totalSum before deleting:', totalSum);
         
             if (totalSum === 0 ) {
@@ -178,11 +189,11 @@ function deleteEmployee(event, idNumOfEmployee) {
             } else if (totalSum > 0 && totalSum < 20000) {
                 console.log('This is totalSum > 0 && totalSum < 20000:', totalSum);
                 document.querySelector('.over-budget').classList = '';
-                indicator.innerHTML = '';
-                totalMonthlySalary.innerHTML = 'Total Monthly: $'+totalSum;
+                //indicator.innerHTML = '';
+                totalMonthlySalary.innerHTML = 'Total Monthly:'+totalSumUSD;
 
             } else if (totalSum >= 20000) {
-                totalMonthlySalary.innerHTML = 'Total Monthly: $'+totalSum;
+                totalMonthlySalary.innerHTML = 'Total Monthly:'+totalSumUSD;
             }
 
             let bye = employeeData.splice(i, 1);
